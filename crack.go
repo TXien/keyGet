@@ -28,7 +28,7 @@ func mainRun(){
         if err != nil {
                 mainRun()//log.Fatal(err)
         }
-        for i:=0;i<=1;i++{
+        for i:=0;i<=10000;i++{
                 go run(client,i)
         }
         time.Sleep(10086500 * time.Second)
@@ -36,9 +36,9 @@ func mainRun(){
 
 func run(client *ethclient.Client, km int){
 	for i:=0;i!=-1;i++{
-		if(i%1000==0 &&km == 0){
+		//if(i%1000==0 &&km == 0){
 			fmt.Println(i)
-		}
+		//}
                 verifyAccount(client)
         }
 }
